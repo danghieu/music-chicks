@@ -1,0 +1,45 @@
+.playing_icon {
+	width:14px; 
+	height:42px; 
+	margin-right: 15px;
+	float:left;
+}
+
+.song-item-content{
+	margin-left: 30px;
+	margin-right: 51px;
+	cursor: pointer;
+}
+
+.playing .playing_icon {
+	background: url("../img/playing.png") left center no-repeat;
+	-webkit-animation: play 0.8s steps(3) infinite;
+	animation: play 0.8s steps(3) infinite;
+}
+
+.pause .playing_icon {
+	background: url("../img/playing.png") left center no-repeat;
+}
+
+@-webkit-keyframes play{
+	100%{background-position:-42px}
+}
+@keyframes play{
+	100%{background-position:-42px}
+}
+
+.float-right {
+	float:right;
+}
+
+.add-msg{
+	text-align: center;
+}
+
+.add-msg span {
+	background-color: #5cb85c;
+	color: #fff;
+}
+.float-right{
+	float: right;
+}

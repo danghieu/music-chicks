@@ -1,0 +1,109 @@
+.player {
+	background-color: $white;
+	border: 1px solid $blueprint;
+	color: $white;
+	width: 40em;
+	height: 15em;
+	margin: auto;
+	position: relative;
+	.player__loading {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		bottom: 0;
+		text-align: center;
+		> span {
+			background-color: lighten($blueprint, 10%);
+			display: inline-block;
+			visibility: hidden;
+			width: 1em;
+			height: 100%;
+			border-radius: 3px 3px 0 0;
+			&.active {
+				visibility: visible;
+				-webkit-animation: loader 2.5s infinite;
+				-o-animation: loader 2.5s infinite;
+				animation: loader 2.5s infinite;
+				@for $i from 1 through 24 {
+					&:nth-child(#{$i}) {
+						-webkit-animation-delay: $i * .1s;
+						-moz-animation-delay: $i * .1s;
+						-o-animation-delay: $i * .1s;
+						animation-delay: $i * .1s;
+					}
+				}
+			}																	
+		}
+	}
+	.player__control {
+		background-color: $blueprint;
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		padding: 1em;
+	}
+	.player--play {
+		padding: 0.2em;
+		border: 1px solid $white;
+		border-radius: 50%;
+	}
+	.player--seek {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		height: 1px;
+		width: 60%;
+		vertical-align: middle;
+		display: inline-block;
+		-webkit-box-shadow: 0 1px 10px 0 rgba($white, .8);
+		-moz-box-shadow: 0 1px 10px 0 rgba($white, .8);
+		box-shadow: 0 1px 10px 0 rgba($white, .8);	
+	}
+	input[type="range"]::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		background-color: $white;
+		z-index: 5;
+		width: 1em;
+		height: 1em;
+		border-radius: 50%;
+		border: 1px solid transparent;
+		-webkit-box-shadow: 0 1px 1px 0 rgba($white, .8);
+		-moz-box-shadow: 0 1px 1px 0 rgba($white, .8);
+		box-shadow: 0 1px 1px 0 rgba($white, .8);
+	}
+	button {
+		background-color: transparent;
+		border: 0;
+		vertical-align: middle;;
+		font-size: 1.5em;
+		cursor: pointer;
+	}
+	span {
+		width: 4em;
+		text-align: center;
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 0.2em;
+	}
+}
+
+@keyframes loader {
+	50% {
+		height: 0.5em;
+		opacity: 0.1;
+	}
+}
+
+@-webkit-keyframes loader {
+	50% {
+		height: 0.5em;
+		opacity: 0.1;
+	}
+}
+
+@-moz-keyframes loader {
+	50% {
+		height: 0.5em;
+		opacity: 0.1;
+	}
+}
